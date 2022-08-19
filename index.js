@@ -12,13 +12,13 @@ app.use(express.json());
 mongoose.connect("mongodb://localhost:27017/full-mern-stack-video");
 
 
-app.get("/", (req,res)=>{
-  res.send("welcome to home")
+app.get("/", async (req,res)=>{
+  res.json({message:"Hello world!"})
 })
 
 app.post("/api/register", async (req, res) => {
   console.log(req.body);
-  res.send('HEllo world')
+  
   try {
     const newPassword = await bcrypt.hash(req.body.password, 10);
     await User.create({
