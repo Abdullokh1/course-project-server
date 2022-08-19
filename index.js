@@ -12,7 +12,7 @@ app.use(express.json());
 mongoose.connect("mongodb://localhost:27017/full-mern-stack-video");
 
 
-app.get("/", async (req,res)=>{
+app.get("/", (req,res)=>{
   res.json({message:"Hello world!"})
 })
 
